@@ -23,6 +23,11 @@ public class ThreadDemo {
 				}
 			}
 		});
+		
+		t1.setPriority(Thread.MIN_PRIORITY);
+		t1.setPriority(Thread.MAX_PRIORITY);
+		System.out.println(t1.getPriority());
+		System.out.println(t2.getPriority());
 
 		t1.start();
 		
