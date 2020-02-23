@@ -2,7 +2,7 @@ package selfstudy.java.threadbasic;
 
 public class ThreadDemo {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		Thread t1 = new Thread(() -> {
 			for (int i = 0; i < 5; i++) {
 				System.out.println("Thread1");
@@ -32,6 +32,13 @@ public class ThreadDemo {
 		}
 		
 		t2.start();
+		
+		
+		t1.join(); // main thread will stop execution and wait for Thread1 to complete
+		t2.join(); // main thread will stop execution and wait for Thread2 to complete
+		
+		System.out.println(t1.isAlive());
+		System.out.println("Bye");
 
 	}
 
